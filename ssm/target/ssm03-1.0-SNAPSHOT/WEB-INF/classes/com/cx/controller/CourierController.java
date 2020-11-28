@@ -1,5 +1,7 @@
 package com.cx.controller;
-
+/**
+ * 温家饶
+ */
 
 import com.cx.pojo.Courier;
 import com.cx.service.CourierService;
@@ -11,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-// 遇到向数据模型中添加数据的类型为EmployeeDetail类型时，则会将这个数据也想session中保存一次
-//@SessionAttributes(types={EmployeeDetail.class})
 @RequestMapping("01")
 public class CourierController {
     @Autowired
@@ -23,8 +23,6 @@ public class CourierController {
         courier.setCourierName("温家饶");
         System.out.println(courier);
 
-
-        System.out.println("111111111111111");
         Courier courier1 =  courierService.selectByName(courier);
         System.out.println(courier1);
         return "/test";
