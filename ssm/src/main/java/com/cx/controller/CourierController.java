@@ -23,8 +23,6 @@ public class CourierController {
         courier.setCourierName("温家饶");
         System.out.println(courier);
 
-
-        System.out.println("111111111111111");
         Courier courier1 =  courierService.selectByName(courier);
         System.out.println(courier1);
         return "/test";
