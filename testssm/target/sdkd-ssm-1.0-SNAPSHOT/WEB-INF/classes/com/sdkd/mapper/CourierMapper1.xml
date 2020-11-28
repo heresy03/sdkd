@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.sdkd.mapper.CourierMapper1">
+    <sql id="selectSql">
+        select
+        `id`,
+        `courier_num` ,
+        `courier_phone`,
+        `courier_password`,
+        `courier_name` ,
+        `courier_province`,
+        `courier_city` ,
+        `courier_area`,
+        `sex` ,
+        `id_card` ,
+        `site_id`,
+        `rights`,
+  from courier;
+    </sql>
+    <select id="select" resultType="courier">
+        <include refid="selectSql"/>
+        <where>
+            <if test="id !=null">id = #{Id}</if>
+        </where>
+    </select>
+</mapper>
