@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-// 遇到向数据模型中添加数据的类型为EmployeeDetail类型时，则会将这个数据也想session中保存一次
-//@SessionAttributes(types={EmployeeDetail.class})
 @RequestMapping("01")
 public class CourierController {
     @Autowired
