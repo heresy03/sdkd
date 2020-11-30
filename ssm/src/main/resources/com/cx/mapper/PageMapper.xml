@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cx.mapper.PageMapper" >
+  <resultMap id="BaseResultMap" type="com.cx.pojo.Page" >
+    <id column="page_id" property="pageId" jdbcType="INTEGER" />
+    <result column="page_num" property="pageNum" jdbcType="INTEGER" />
+    <result column="send_id" property="sendId" jdbcType="INTEGER" />
+    <result column="weight" property="weight" jdbcType="DECIMAL" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="rcv_id" property="rcvId" jdbcType="INTEGER" />
+    <result column="page_code" property="pageCode" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="reserved_fields1" property="reservedFields1" jdbcType="VARCHAR" />
+    <result column="reserved_fields2" property="reservedFields2" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    page_id, page_num, send_id, weight, remark, rcv_id, page_code, create_time, update_time, 
+    reserved_fields1, reserved_fields2
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cx.pojo.PageExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from page
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from page
+    where page_id = #{pageId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from page
+    where page_id = #{pageId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.cx.pojo.PageExample" >
+    delete from page
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.cx.pojo.Page" >
+    insert into page (page_id, page_num, send_id, 
+      weight, remark, rcv_id, 
+      page_code, create_time, update_time, 
+      reserved_fields1, reserved_fields2)
+    values (#{pageId,jdbcType=INTEGER}, #{pageNum,jdbcType=INTEGER}, #{sendId,jdbcType=INTEGER}, 
+      #{weight,jdbcType=DECIMAL}, #{remark,jdbcType=VARCHAR}, #{rcvId,jdbcType=INTEGER}, 
+      #{pageCode,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{reservedFields1,jdbcType=VARCHAR}, #{reservedFields2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cx.pojo.Page" >
+    insert into page
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pageId != null" >
+        page_id,
+      </if>
+      <if test="pageNum != null" >
+        page_num,
+      </if>
+      <if test="sendId != null" >
+        send_id,
+      </if>
+      <if test="weight != null" >
+        weight,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="rcvId != null" >
+        rcv_id,
+      </if>
+      <if test="pageCode != null" >
+        page_code,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="reservedFields1 != null" >
+        reserved_fields1,
+      </if>
+      <if test="reservedFields2 != null" >
+        reserved_fields2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pageId != null" >
+        #{pageId,jdbcType=INTEGER},
+      </if>
+      <if test="pageNum != null" >
+        #{pageNum,jdbcType=INTEGER},
+      </if>
+      <if test="sendId != null" >
+        #{sendId,jdbcType=INTEGER},
+      </if>
+      <if test="weight != null" >
+        #{weight,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="rcvId != null" >
+        #{rcvId,jdbcType=INTEGER},
+      </if>
+      <if test="pageCode != null" >
+        #{pageCode,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reservedFields1 != null" >
+        #{reservedFields1,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedFields2 != null" >
+        #{reservedFields2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.cx.pojo.PageExample" resultType="java.lang.Integer" >
+    select count(*) from page
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update page
+    <set >
+      <if test="record.pageId != null" >
+        page_id = #{record.pageId,jdbcType=INTEGER},
+      </if>
+      <if test="record.pageNum != null" >
+        page_num = #{record.pageNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.sendId != null" >
+        send_id = #{record.sendId,jdbcType=INTEGER},
+      </if>
+      <if test="record.weight != null" >
+        weight = #{record.weight,jdbcType=DECIMAL},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rcvId != null" >
+        rcv_id = #{record.rcvId,jdbcType=INTEGER},
+      </if>
+      <if test="record.pageCode != null" >
+        page_code = #{record.pageCode,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.reservedFields1 != null" >
+        reserved_fields1 = #{record.reservedFields1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reservedFields2 != null" >
+        reserved_fields2 = #{record.reservedFields2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update page
+    set page_id = #{record.pageId,jdbcType=INTEGER},
+      page_num = #{record.pageNum,jdbcType=INTEGER},
+      send_id = #{record.sendId,jdbcType=INTEGER},
+      weight = #{record.weight,jdbcType=DECIMAL},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      rcv_id = #{record.rcvId,jdbcType=INTEGER},
+      page_code = #{record.pageCode,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      reserved_fields1 = #{record.reservedFields1,jdbcType=VARCHAR},
+      reserved_fields2 = #{record.reservedFields2,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cx.pojo.Page" >
+    update page
+    <set >
+      <if test="pageNum != null" >
+        page_num = #{pageNum,jdbcType=INTEGER},
+      </if>
+      <if test="sendId != null" >
+        send_id = #{sendId,jdbcType=INTEGER},
+      </if>
+      <if test="weight != null" >
+        weight = #{weight,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="rcvId != null" >
+        rcv_id = #{rcvId,jdbcType=INTEGER},
+      </if>
+      <if test="pageCode != null" >
+        page_code = #{pageCode,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reservedFields1 != null" >
+        reserved_fields1 = #{reservedFields1,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedFields2 != null" >
+        reserved_fields2 = #{reservedFields2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where page_id = #{pageId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cx.pojo.Page" >
+    update page
+    set page_num = #{pageNum,jdbcType=INTEGER},
+      send_id = #{sendId,jdbcType=INTEGER},
+      weight = #{weight,jdbcType=DECIMAL},
+      remark = #{remark,jdbcType=VARCHAR},
+      rcv_id = #{rcvId,jdbcType=INTEGER},
+      page_code = #{pageCode,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      reserved_fields1 = #{reservedFields1,jdbcType=VARCHAR},
+      reserved_fields2 = #{reservedFields2,jdbcType=VARCHAR}
+    where page_id = #{pageId,jdbcType=INTEGER}
+  </update>
+</mapper>

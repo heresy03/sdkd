@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.cx.mapper.CourierMapper" >
-  <resultMap id="BaseResultMap" type="com.cx.pojo.Courier" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="courier_num" property="courierNum" jdbcType="INTEGER" />
-    <result column="courier_phone" property="courierPhone" jdbcType="CHAR" />
-    <result column="courier_password" property="courierPassword" jdbcType="VARCHAR" />
-    <result column="courier_name" property="courierName" jdbcType="VARCHAR" />
-    <result column="courier_province" property="courierProvince" jdbcType="VARCHAR" />
-    <result column="courier_city" property="courierCity" jdbcType="VARCHAR" />
-    <result column="courier_area" property="courierArea" jdbcType="VARCHAR" />
+<mapper namespace="com.cx.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.cx.pojo.User" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="user_password" property="userPassword" jdbcType="VARCHAR" />
     <result column="sex" property="sex" jdbcType="CHAR" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="user_phone" property="userPhone" jdbcType="CHAR" />
     <result column="id_card" property="idCard" jdbcType="CHAR" />
-    <result column="site_id" property="siteId" jdbcType="INTEGER" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="rights" property="rights" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
@@ -78,17 +75,16 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, courier_num, courier_phone, courier_password, courier_name, courier_province, 
-    courier_city, courier_area, sex, id_card, site_id, rights, create_time, update_time, 
-    reserved_fields1, reserved_fields2
+    user_id, user_name, user_password, sex, age, user_phone, id_card, address, rights, 
+    create_time, update_time, reserved_fields1, reserved_fields2
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cx.pojo.CourierExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cx.pojo.UserExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from courier
+    from user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -99,68 +95,57 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from courier
-    where id = #{id,jdbcType=INTEGER}
+    from user
+    where user_id = #{userId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from courier
-    where id = #{id,jdbcType=INTEGER}
+    delete from user
+    where user_id = #{userId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.cx.pojo.CourierExample" >
-    delete from courier
+  <delete id="deleteByExample" parameterType="com.cx.pojo.UserExample" >
+    delete from user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.cx.pojo.Courier" >
-    insert into courier (id, courier_num, courier_phone, 
-      courier_password, courier_name, courier_province, 
-      courier_city, courier_area, sex, 
-      id_card, site_id, rights, 
-      create_time, update_time, reserved_fields1, 
-      reserved_fields2)
-    values (#{id,jdbcType=INTEGER}, #{courierNum,jdbcType=INTEGER}, #{courierPhone,jdbcType=CHAR}, 
-      #{courierPassword,jdbcType=VARCHAR}, #{courierName,jdbcType=VARCHAR}, #{courierProvince,jdbcType=VARCHAR}, 
-      #{courierCity,jdbcType=VARCHAR}, #{courierArea,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, 
-      #{idCard,jdbcType=CHAR}, #{siteId,jdbcType=INTEGER}, #{rights,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{reservedFields1,jdbcType=VARCHAR}, 
-      #{reservedFields2,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.cx.pojo.User" >
+    insert into user (user_id, user_name, user_password, 
+      sex, age, user_phone, id_card, 
+      address, rights, create_time, 
+      update_time, reserved_fields1, reserved_fields2
+      )
+    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=CHAR}, #{age,jdbcType=INTEGER}, #{userPhone,jdbcType=CHAR}, #{idCard,jdbcType=CHAR}, 
+      #{address,jdbcType=VARCHAR}, #{rights,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{reservedFields1,jdbcType=VARCHAR}, #{reservedFields2,jdbcType=VARCHAR}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="com.cx.pojo.Courier" >
-    insert into courier
+  <insert id="insertSelective" parameterType="com.cx.pojo.User" >
+    insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
+      <if test="userId != null" >
+        user_id,
       </if>
-      <if test="courierNum != null" >
-        courier_num,
+      <if test="userName != null" >
+        user_name,
       </if>
-      <if test="courierPhone != null" >
-        courier_phone,
-      </if>
-      <if test="courierPassword != null" >
-        courier_password,
-      </if>
-      <if test="courierName != null" >
-        courier_name,
-      </if>
-      <if test="courierProvince != null" >
-        courier_province,
-      </if>
-      <if test="courierCity != null" >
-        courier_city,
-      </if>
-      <if test="courierArea != null" >
-        courier_area,
+      <if test="userPassword != null" >
+        user_password,
       </if>
       <if test="sex != null" >
         sex,
       </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="userPhone != null" >
+        user_phone,
+      </if>
       <if test="idCard != null" >
         id_card,
       </if>
-      <if test="siteId != null" >
-        site_id,
+      <if test="address != null" >
+        address,
       </if>
       <if test="rights != null" >
         rights,
@@ -179,38 +164,29 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
       </if>
-      <if test="courierNum != null" >
-        #{courierNum,jdbcType=INTEGER},
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
       </if>
-      <if test="courierPhone != null" >
-        #{courierPhone,jdbcType=CHAR},
-      </if>
-      <if test="courierPassword != null" >
-        #{courierPassword,jdbcType=VARCHAR},
-      </if>
-      <if test="courierName != null" >
-        #{courierName,jdbcType=VARCHAR},
-      </if>
-      <if test="courierProvince != null" >
-        #{courierProvince,jdbcType=VARCHAR},
-      </if>
-      <if test="courierCity != null" >
-        #{courierCity,jdbcType=VARCHAR},
-      </if>
-      <if test="courierArea != null" >
-        #{courierArea,jdbcType=VARCHAR},
+      <if test="userPassword != null" >
+        #{userPassword,jdbcType=VARCHAR},
       </if>
       <if test="sex != null" >
         #{sex,jdbcType=CHAR},
       </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="userPhone != null" >
+        #{userPhone,jdbcType=CHAR},
+      </if>
       <if test="idCard != null" >
         #{idCard,jdbcType=CHAR},
       </if>
-      <if test="siteId != null" >
-        #{siteId,jdbcType=INTEGER},
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
       </if>
       <if test="rights != null" >
         #{rights,jdbcType=INTEGER},
@@ -229,47 +205,38 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.cx.pojo.CourierExample" resultType="java.lang.Integer" >
-    select count(*) from courier
+  <select id="countByExample" parameterType="com.cx.pojo.UserExample" resultType="java.lang.Integer" >
+    select count(*) from user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update courier
+    update user
     <set >
-      <if test="record.id != null" >
-        id = #{record.id,jdbcType=INTEGER},
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=INTEGER},
       </if>
-      <if test="record.courierNum != null" >
-        courier_num = #{record.courierNum,jdbcType=INTEGER},
+      <if test="record.userName != null" >
+        user_name = #{record.userName,jdbcType=VARCHAR},
       </if>
-      <if test="record.courierPhone != null" >
-        courier_phone = #{record.courierPhone,jdbcType=CHAR},
-      </if>
-      <if test="record.courierPassword != null" >
-        courier_password = #{record.courierPassword,jdbcType=VARCHAR},
-      </if>
-      <if test="record.courierName != null" >
-        courier_name = #{record.courierName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.courierProvince != null" >
-        courier_province = #{record.courierProvince,jdbcType=VARCHAR},
-      </if>
-      <if test="record.courierCity != null" >
-        courier_city = #{record.courierCity,jdbcType=VARCHAR},
-      </if>
-      <if test="record.courierArea != null" >
-        courier_area = #{record.courierArea,jdbcType=VARCHAR},
+      <if test="record.userPassword != null" >
+        user_password = #{record.userPassword,jdbcType=VARCHAR},
       </if>
       <if test="record.sex != null" >
         sex = #{record.sex,jdbcType=CHAR},
       </if>
+      <if test="record.age != null" >
+        age = #{record.age,jdbcType=INTEGER},
+      </if>
+      <if test="record.userPhone != null" >
+        user_phone = #{record.userPhone,jdbcType=CHAR},
+      </if>
       <if test="record.idCard != null" >
         id_card = #{record.idCard,jdbcType=CHAR},
       </if>
-      <if test="record.siteId != null" >
-        site_id = #{record.siteId,jdbcType=INTEGER},
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
       </if>
       <if test="record.rights != null" >
         rights = #{record.rights,jdbcType=INTEGER},
@@ -292,18 +259,15 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update courier
-    set id = #{record.id,jdbcType=INTEGER},
-      courier_num = #{record.courierNum,jdbcType=INTEGER},
-      courier_phone = #{record.courierPhone,jdbcType=CHAR},
-      courier_password = #{record.courierPassword,jdbcType=VARCHAR},
-      courier_name = #{record.courierName,jdbcType=VARCHAR},
-      courier_province = #{record.courierProvince,jdbcType=VARCHAR},
-      courier_city = #{record.courierCity,jdbcType=VARCHAR},
-      courier_area = #{record.courierArea,jdbcType=VARCHAR},
+    update user
+    set user_id = #{record.userId,jdbcType=INTEGER},
+      user_name = #{record.userName,jdbcType=VARCHAR},
+      user_password = #{record.userPassword,jdbcType=VARCHAR},
       sex = #{record.sex,jdbcType=CHAR},
+      age = #{record.age,jdbcType=INTEGER},
+      user_phone = #{record.userPhone,jdbcType=CHAR},
       id_card = #{record.idCard,jdbcType=CHAR},
-      site_id = #{record.siteId,jdbcType=INTEGER},
+      address = #{record.address,jdbcType=VARCHAR},
       rights = #{record.rights,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
@@ -313,38 +277,29 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cx.pojo.Courier" >
-    update courier
+  <update id="updateByPrimaryKeySelective" parameterType="com.cx.pojo.User" >
+    update user
     <set >
-      <if test="courierNum != null" >
-        courier_num = #{courierNum,jdbcType=INTEGER},
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
       </if>
-      <if test="courierPhone != null" >
-        courier_phone = #{courierPhone,jdbcType=CHAR},
-      </if>
-      <if test="courierPassword != null" >
-        courier_password = #{courierPassword,jdbcType=VARCHAR},
-      </if>
-      <if test="courierName != null" >
-        courier_name = #{courierName,jdbcType=VARCHAR},
-      </if>
-      <if test="courierProvince != null" >
-        courier_province = #{courierProvince,jdbcType=VARCHAR},
-      </if>
-      <if test="courierCity != null" >
-        courier_city = #{courierCity,jdbcType=VARCHAR},
-      </if>
-      <if test="courierArea != null" >
-        courier_area = #{courierArea,jdbcType=VARCHAR},
+      <if test="userPassword != null" >
+        user_password = #{userPassword,jdbcType=VARCHAR},
       </if>
       <if test="sex != null" >
         sex = #{sex,jdbcType=CHAR},
       </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="userPhone != null" >
+        user_phone = #{userPhone,jdbcType=CHAR},
+      </if>
       <if test="idCard != null" >
         id_card = #{idCard,jdbcType=CHAR},
       </if>
-      <if test="siteId != null" >
-        site_id = #{siteId,jdbcType=INTEGER},
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
       </if>
       <if test="rights != null" >
         rights = #{rights,jdbcType=INTEGER},
@@ -362,25 +317,22 @@
         reserved_fields2 = #{reservedFields2,jdbcType=VARCHAR},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cx.pojo.Courier" >
-    update courier
-    set courier_num = #{courierNum,jdbcType=INTEGER},
-      courier_phone = #{courierPhone,jdbcType=CHAR},
-      courier_password = #{courierPassword,jdbcType=VARCHAR},
-      courier_name = #{courierName,jdbcType=VARCHAR},
-      courier_province = #{courierProvince,jdbcType=VARCHAR},
-      courier_city = #{courierCity,jdbcType=VARCHAR},
-      courier_area = #{courierArea,jdbcType=VARCHAR},
+  <update id="updateByPrimaryKey" parameterType="com.cx.pojo.User" >
+    update user
+    set user_name = #{userName,jdbcType=VARCHAR},
+      user_password = #{userPassword,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=CHAR},
+      age = #{age,jdbcType=INTEGER},
+      user_phone = #{userPhone,jdbcType=CHAR},
       id_card = #{idCard,jdbcType=CHAR},
-      site_id = #{siteId,jdbcType=INTEGER},
+      address = #{address,jdbcType=VARCHAR},
       rights = #{rights,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       reserved_fields1 = #{reservedFields1,jdbcType=VARCHAR},
       reserved_fields2 = #{reservedFields2,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cx.mapper.TransferMapper" >
+  <resultMap id="BaseResultMap" type="com.cx.pojo.Transfer" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="page_num" property="pageNum" jdbcType="VARCHAR" />
+    <result column="driver_id" property="driverId" jdbcType="INTEGER" />
+    <result column="driver_name" property="driverName" jdbcType="VARCHAR" />
+    <result column="start_site_name" property="startSiteName" jdbcType="VARCHAR" />
+    <result column="now_site_name" property="nowSiteName" jdbcType="VARCHAR" />
+    <result column="end_site_name" property="endSiteName" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="reserved_fields1" property="reservedFields1" jdbcType="VARCHAR" />
+    <result column="reserved_fields2" property="reservedFields2" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, page_num, driver_id, driver_name, start_site_name, now_site_name, end_site_name, 
+    create_time, update_time, reserved_fields1, reserved_fields2
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cx.pojo.TransferExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from transfer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from transfer
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from transfer
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.cx.pojo.TransferExample" >
+    delete from transfer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.cx.pojo.Transfer" >
+    insert into transfer (id, page_num, driver_id, 
+      driver_name, start_site_name, now_site_name, 
+      end_site_name, create_time, update_time, 
+      reserved_fields1, reserved_fields2)
+    values (#{id,jdbcType=INTEGER}, #{pageNum,jdbcType=VARCHAR}, #{driverId,jdbcType=INTEGER}, 
+      #{driverName,jdbcType=VARCHAR}, #{startSiteName,jdbcType=VARCHAR}, #{nowSiteName,jdbcType=VARCHAR}, 
+      #{endSiteName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{reservedFields1,jdbcType=VARCHAR}, #{reservedFields2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cx.pojo.Transfer" >
+    insert into transfer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="pageNum != null" >
+        page_num,
+      </if>
+      <if test="driverId != null" >
+        driver_id,
+      </if>
+      <if test="driverName != null" >
+        driver_name,
+      </if>
+      <if test="startSiteName != null" >
+        start_site_name,
+      </if>
+      <if test="nowSiteName != null" >
+        now_site_name,
+      </if>
+      <if test="endSiteName != null" >
+        end_site_name,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="reservedFields1 != null" >
+        reserved_fields1,
+      </if>
+      <if test="reservedFields2 != null" >
+        reserved_fields2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pageNum != null" >
+        #{pageNum,jdbcType=VARCHAR},
+      </if>
+      <if test="driverId != null" >
+        #{driverId,jdbcType=INTEGER},
+      </if>
+      <if test="driverName != null" >
+        #{driverName,jdbcType=VARCHAR},
+      </if>
+      <if test="startSiteName != null" >
+        #{startSiteName,jdbcType=VARCHAR},
+      </if>
+      <if test="nowSiteName != null" >
+        #{nowSiteName,jdbcType=VARCHAR},
+      </if>
+      <if test="endSiteName != null" >
+        #{endSiteName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reservedFields1 != null" >
+        #{reservedFields1,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedFields2 != null" >
+        #{reservedFields2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.cx.pojo.TransferExample" resultType="java.lang.Integer" >
+    select count(*) from transfer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update transfer
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.pageNum != null" >
+        page_num = #{record.pageNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.driverId != null" >
+        driver_id = #{record.driverId,jdbcType=INTEGER},
+      </if>
+      <if test="record.driverName != null" >
+        driver_name = #{record.driverName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startSiteName != null" >
+        start_site_name = #{record.startSiteName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nowSiteName != null" >
+        now_site_name = #{record.nowSiteName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.endSiteName != null" >
+        end_site_name = #{record.endSiteName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.reservedFields1 != null" >
+        reserved_fields1 = #{record.reservedFields1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reservedFields2 != null" >
+        reserved_fields2 = #{record.reservedFields2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update transfer
+    set id = #{record.id,jdbcType=INTEGER},
+      page_num = #{record.pageNum,jdbcType=VARCHAR},
+      driver_id = #{record.driverId,jdbcType=INTEGER},
+      driver_name = #{record.driverName,jdbcType=VARCHAR},
+      start_site_name = #{record.startSiteName,jdbcType=VARCHAR},
+      now_site_name = #{record.nowSiteName,jdbcType=VARCHAR},
+      end_site_name = #{record.endSiteName,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      reserved_fields1 = #{record.reservedFields1,jdbcType=VARCHAR},
+      reserved_fields2 = #{record.reservedFields2,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cx.pojo.Transfer" >
+    update transfer
+    <set >
+      <if test="pageNum != null" >
+        page_num = #{pageNum,jdbcType=VARCHAR},
+      </if>
+      <if test="driverId != null" >
+        driver_id = #{driverId,jdbcType=INTEGER},
+      </if>
+      <if test="driverName != null" >
+        driver_name = #{driverName,jdbcType=VARCHAR},
+      </if>
+      <if test="startSiteName != null" >
+        start_site_name = #{startSiteName,jdbcType=VARCHAR},
+      </if>
+      <if test="nowSiteName != null" >
+        now_site_name = #{nowSiteName,jdbcType=VARCHAR},
+      </if>
+      <if test="endSiteName != null" >
+        end_site_name = #{endSiteName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reservedFields1 != null" >
+        reserved_fields1 = #{reservedFields1,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedFields2 != null" >
+        reserved_fields2 = #{reservedFields2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cx.pojo.Transfer" >
+    update transfer
+    set page_num = #{pageNum,jdbcType=VARCHAR},
+      driver_id = #{driverId,jdbcType=INTEGER},
+      driver_name = #{driverName,jdbcType=VARCHAR},
+      start_site_name = #{startSiteName,jdbcType=VARCHAR},
+      now_site_name = #{nowSiteName,jdbcType=VARCHAR},
+      end_site_name = #{endSiteName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      reserved_fields1 = #{reservedFields1,jdbcType=VARCHAR},
+      reserved_fields2 = #{reservedFields2,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

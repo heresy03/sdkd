@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cx.mapper.TbAdminMapper" >
+  <resultMap id="BaseResultMap" type="com.cx.pojo.TbAdmin" >
+    <id column="admin_id" property="adminId" jdbcType="INTEGER" />
+    <result column="aphone" property="aphone" jdbcType="CHAR" />
+    <result column="apassword" property="apassword" jdbcType="VARCHAR" />
+    <result column="aname" property="aname" jdbcType="VARCHAR" />
+    <result column="idcard" property="idcard" jdbcType="CHAR" />
+    <result column="rights" property="rights" jdbcType="INTEGER" />
+    <result column="site_id" property="siteId" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="
+
+reserved_fields1" property="
+
+reservedFields1" jdbcType="VARCHAR" />
+    <result column="reserved_fields2" property="reservedFields2" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    admin_id, aphone, apassword, aname, idcard, rights, site_id, create_time, update_time, 
+    
+
+reserved_fields1, reserved_fields2
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cx.pojo.TbAdminExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_admin
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_admin
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_admin
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.cx.pojo.TbAdminExample" >
+    delete from tb_admin
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.cx.pojo.TbAdmin" >
+    insert into tb_admin (admin_id, aphone, apassword, 
+      aname, idcard, rights, 
+      site_id, create_time, update_time, 
+      
+
+reserved_fields1, reserved_fields2)
+    values (#{adminId,jdbcType=INTEGER}, #{aphone,jdbcType=CHAR}, #{apassword,jdbcType=VARCHAR}, 
+      #{aname,jdbcType=VARCHAR}, #{idcard,jdbcType=CHAR}, #{rights,jdbcType=INTEGER}, 
+      #{siteId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{
+
+reservedFields1,jdbcType=VARCHAR}, #{reservedFields2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cx.pojo.TbAdmin" >
+    insert into tb_admin
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="adminId != null" >
+        admin_id,
+      </if>
+      <if test="aphone != null" >
+        aphone,
+      </if>
+      <if test="apassword != null" >
+        apassword,
+      </if>
+      <if test="aname != null" >
+        aname,
+      </if>
+      <if test="idcard != null" >
+        idcard,
+      </if>
+      <if test="rights != null" >
+        rights,
+      </if>
+      <if test="siteId != null" >
+        site_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="
+
+reservedFields1 != null" >
+        
+
+reserved_fields1,
+      </if>
+      <if test="reservedFields2 != null" >
+        reserved_fields2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="adminId != null" >
+        #{adminId,jdbcType=INTEGER},
+      </if>
+      <if test="aphone != null" >
+        #{aphone,jdbcType=CHAR},
+      </if>
+      <if test="apassword != null" >
+        #{apassword,jdbcType=VARCHAR},
+      </if>
+      <if test="aname != null" >
+        #{aname,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        #{idcard,jdbcType=CHAR},
+      </if>
+      <if test="rights != null" >
+        #{rights,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null" >
+        #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="
+
+reservedFields1 != null" >
+        #{
+
+reservedFields1,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedFields2 != null" >
+        #{reservedFields2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.cx.pojo.TbAdminExample" resultType="java.lang.Integer" >
+    select count(*) from tb_admin
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_admin
+    <set >
+      <if test="record.adminId != null" >
+        admin_id = #{record.adminId,jdbcType=INTEGER},
+      </if>
+      <if test="record.aphone != null" >
+        aphone = #{record.aphone,jdbcType=CHAR},
+      </if>
+      <if test="record.apassword != null" >
+        apassword = #{record.apassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aname != null" >
+        aname = #{record.aname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idcard != null" >
+        idcard = #{record.idcard,jdbcType=CHAR},
+      </if>
+      <if test="record.rights != null" >
+        rights = #{record.rights,jdbcType=INTEGER},
+      </if>
+      <if test="record.siteId != null" >
+        site_id = #{record.siteId,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.
+
+reservedFields1 != null" >
+        
+
+reserved_fields1 = #{record.
+
+reservedFields1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reservedFields2 != null" >
+        reserved_fields2 = #{record.reservedFields2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_admin
+    set admin_id = #{record.adminId,jdbcType=INTEGER},
+      aphone = #{record.aphone,jdbcType=CHAR},
+      apassword = #{record.apassword,jdbcType=VARCHAR},
+      aname = #{record.aname,jdbcType=VARCHAR},
+      idcard = #{record.idcard,jdbcType=CHAR},
+      rights = #{record.rights,jdbcType=INTEGER},
+      site_id = #{record.siteId,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      
+
+reserved_fields1 = #{record.
+
+reservedFields1,jdbcType=VARCHAR},
+      reserved_fields2 = #{record.reservedFields2,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cx.pojo.TbAdmin" >
+    update tb_admin
+    <set >
+      <if test="aphone != null" >
+        aphone = #{aphone,jdbcType=CHAR},
+      </if>
+      <if test="apassword != null" >
+        apassword = #{apassword,jdbcType=VARCHAR},
+      </if>
+      <if test="aname != null" >
+        aname = #{aname,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        idcard = #{idcard,jdbcType=CHAR},
+      </if>
+      <if test="rights != null" >
+        rights = #{rights,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null" >
+        site_id = #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="
+
+reservedFields1 != null" >
+        
+
+reserved_fields1 = #{
+
+reservedFields1,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedFields2 != null" >
+        reserved_fields2 = #{reservedFields2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cx.pojo.TbAdmin" >
+    update tb_admin
+    set aphone = #{aphone,jdbcType=CHAR},
+      apassword = #{apassword,jdbcType=VARCHAR},
+      aname = #{aname,jdbcType=VARCHAR},
+      idcard = #{idcard,jdbcType=CHAR},
+      rights = #{rights,jdbcType=INTEGER},
+      site_id = #{siteId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      
+
+reserved_fields1 = #{
+
+reservedFields1,jdbcType=VARCHAR},
+      reserved_fields2 = #{reservedFields2,jdbcType=VARCHAR}
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </update>
+</mapper>
