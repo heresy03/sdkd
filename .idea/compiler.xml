@@ -11,8 +11,5 @@
         <module name="ssm03" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="testssm" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
