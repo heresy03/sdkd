@@ -3,6 +3,7 @@ package com.cx.controller;
  * 温家饶
  */
 
+import com.cx.pojo.Courier;
 import com.cx.service.CourierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
