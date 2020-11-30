@@ -1,6 +1,7 @@
 package com.cx.mapper;
 
 import com.cx.pojo.User;
+import com.cx.pojo.UserExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
