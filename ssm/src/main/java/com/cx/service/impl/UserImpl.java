@@ -6,8 +6,11 @@ import com.cx.pojo.UserExample;
 import com.cx.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
+
+/**
+ * 丛志文
+ */
 
 @Component
 public class UserImpl implements UserService {

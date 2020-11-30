@@ -1,10 +1,10 @@
 package com.cx.service;
 
+import com.cx.pojo.Courier;
+
 /**
  * 温家饶
  */
-
-import com.cx.pojo.Courier;
 
 public interface CourierService {
    Courier select(Courier courier);

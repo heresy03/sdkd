@@ -22,13 +22,13 @@ public class UserController {
 
     //表单提交过来的路径
     @RequestMapping("checkLogin")
-    public String checkLogin(@RequestBody User user, Model model){
+    public String checkLogin(String phone,String pwd, Model model){
         //调用service方法
-        user = userService.selectLogin(user.getUserPhone(), user.getUserPassword());
+        User user = userService.selectLogin(phone,pwd);
         //若有user则添加到model里并且跳转到成功页面
         if(user != null){
             model.addAttribute("user",user);
-            return "success";
+            return "test";
         }
         return "fail";
     }
