@@ -1,6 +1,7 @@
 package com.cx.mapper;
 
 import com.cx.pojo.CourierRcv;
+import com.cx.pojo.CourierRcvExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
