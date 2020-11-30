@@ -17,7 +17,7 @@ public class UserImpl implements UserService {
     @Autowired
     UserMapper userMapper;
 
-    @Override
+
     public User selectLogin(String phone, String pwd) {
         UserExample userExample = new UserExample();
         userExample.createCriteria().andUserPhoneEqualTo(phone).andUserPasswordEqualTo(pwd);
@@ -28,7 +28,7 @@ public class UserImpl implements UserService {
         return null;
     }
 
-    @Override
+
     public void register(String phone, String pwd, String code) {
 
     }
