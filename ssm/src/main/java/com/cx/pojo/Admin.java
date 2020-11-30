@@ -2,16 +2,16 @@ package com.cx.pojo;
 
 import java.util.Date;
 
-public class TbAdmin {
+public class Admin {
     private Integer adminId;
 
-    private String aphone;
+    private String adminPhone;
 
-    private String apassword;
+    private String adminPassword;
 
-    private String aname;
+    private String adminName;
 
-    private String idcard;
+    private String idCard;
 
     private Integer rights;
 
@@ -21,9 +21,9 @@ public class TbAdmin {
 
     private Date updateTime;
 
-    private String 
+    private String
 
-reservedFields1;
+            reservedFields1;
 
     private String reservedFields2;
 
@@ -35,36 +35,36 @@ reservedFields1;
         this.adminId = adminId;
     }
 
-    public String getAphone() {
-        return aphone;
+    public String getAdminPhone() {
+        return adminPhone;
     }
 
-    public void setAphone(String aphone) {
-        this.aphone = aphone == null ? null : aphone.trim();
+    public void setAdminPhone(String adminPhone) {
+        this.adminPhone = adminPhone == null ? null : adminPhone.trim();
     }
 
-    public String getApassword() {
-        return apassword;
+    public String getAdminPassword() {
+        return adminPassword;
     }
 
-    public void setApassword(String apassword) {
-        this.apassword = apassword == null ? null : apassword.trim();
+    public void setAdminPassword(String adminPassword) {
+        this.adminPassword = adminPassword == null ? null : adminPassword.trim();
     }
 
-    public String getAname() {
-        return aname;
+    public String getAdminName() {
+        return adminName;
     }
 
-    public void setAname(String aname) {
-        this.aname = aname == null ? null : aname.trim();
+    public void setAdminName(String adminName) {
+        this.adminName = adminName == null ? null : adminName.trim();
     }
 
-    public String getIdcard() {
-        return idcard;
+    public String getIdCard() {
+        return idCard;
     }
 
-    public void setIdcard(String idcard) {
-        this.idcard = idcard == null ? null : idcard.trim();
+    public void setIdCard(String idCard) {
+        this.idCard = idCard == null ? null : idCard.trim();
     }
 
     public Integer getRights() {
@@ -99,26 +99,14 @@ reservedFields1;
         this.updateTime = updateTime;
     }
 
-    public String get
-
-reservedFields1() {
-        return 
-
-reservedFields1;
+    public String getreservedFields1() {
+        return reservedFields1;
     }
 
-    public void set
+    public void setreservedFields1(String reservedFields1) {
+        this.reservedFields1 = reservedFields1 == null ? null :
 
-reservedFields1(String 
-
-reservedFields1) {
-        this.
-
-reservedFields1 = 
-
-reservedFields1 == null ? null : 
-
-reservedFields1.trim();
+                reservedFields1.trim();
     }
 
     public String getReservedFields2() {

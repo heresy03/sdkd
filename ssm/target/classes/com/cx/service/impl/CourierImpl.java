@@ -18,11 +18,11 @@ public class CourierImpl implements CourierService {
 
     public Courier select(Courier courier) {
         courier.setCourierName("");
-       return courierMapper.select(courier);
+        return null;
     }
 
 
     public Courier selectByName(Courier courier) {
-        return courierMapper.select(courier);
+        return null;
     }
 }

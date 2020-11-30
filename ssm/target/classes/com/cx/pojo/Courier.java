@@ -1,40 +1,39 @@
 package com.cx.pojo;
 
-/**
- * 温家饶
- */
-
-import com.alibaba.druid.sql.visitor.functions.Char;
+import java.util.Date;
 
 public class Courier {
     private Integer id;
+
     private Integer courierNum;
+
     private String courierPhone;
+
     private String courierPassword;
+
     private String courierName;
+
     private String courierProvince;
+
+    private String courierCity;
+
     private String courierArea;
-    private Char sex;
-    private Long idCard;
+
+    private String sex;
+
+    private String idCard;
+
     private Integer siteId;
+
     private Integer rights;
 
-    @Override
-    public String toString() {
-        return "Courier{" +
-                "id=" + id +
-                ", courierNum=" + courierNum +
-                ", courierPhone='" + courierPhone + '\'' +
-                ", courierPassword='" + courierPassword + '\'' +
-                ", courierName='" + courierName + '\'' +
-                ", courierProvince='" + courierProvince + '\'' +
-                ", courierArea='" + courierArea + '\'' +
-                ", sex=" + sex +
-                ", idCard=" + idCard +
-                ", siteId=" + siteId +
-                ", rights=" + rights +
-                '}';
-    }
+    private Date createTime;
+
+    private Date updateTime;
+
+    private String reservedFields1;
+
+    private String reservedFields2;
 
     public Integer getId() {
         return id;
@@ -57,7 +56,7 @@ public class Courier {
     }
 
     public void setCourierPhone(String courierPhone) {
-        this.courierPhone = courierPhone;
+        this.courierPhone = courierPhone == null ? null : courierPhone.trim();
     }
 
     public String getCourierPassword() {
@@ -65,7 +64,7 @@ public class Courier {
     }
 
     public void setCourierPassword(String courierPassword) {
-        this.courierPassword = courierPassword;
+        this.courierPassword = courierPassword == null ? null : courierPassword.trim();
     }
 
     public String getCourierName() {
@@ -73,7 +72,7 @@ public class Courier {
     }
 
     public void setCourierName(String courierName) {
-        this.courierName = courierName;
+        this.courierName = courierName == null ? null : courierName.trim();
     }
 
     public String getCourierProvince() {
@@ -81,7 +80,15 @@ public class Courier {
     }
 
     public void setCourierProvince(String courierProvince) {
-        this.courierProvince = courierProvince;
+        this.courierProvince = courierProvince == null ? null : courierProvince.trim();
+    }
+
+    public String getCourierCity() {
+        return courierCity;
+    }
+
+    public void setCourierCity(String courierCity) {
+        this.courierCity = courierCity == null ? null : courierCity.trim();
     }
 
     public String getCourierArea() {
@@ -89,23 +96,23 @@ public class Courier {
     }
 
     public void setCourierArea(String courierArea) {
-        this.courierArea = courierArea;
+        this.courierArea = courierArea == null ? null : courierArea.trim();
     }
 
-    public Char getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(Char sex) {
-        this.sex = sex;
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
     }
 
-    public Long getIdCard() {
+    public String getIdCard() {
         return idCard;
     }
 
-    public void setIdCard(Long idCard) {
-        this.idCard = idCard;
+    public void setIdCard(String idCard) {
+        this.idCard = idCard == null ? null : idCard.trim();
     }
 
     public Integer getSiteId() {
@@ -122,5 +129,37 @@ public class Courier {
 
     public void setRights(Integer rights) {
         this.rights = rights;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public String getReservedFields1() {
+        return reservedFields1;
+    }
+
+    public void setReservedFields1(String reservedFields1) {
+        this.reservedFields1 = reservedFields1 == null ? null : reservedFields1.trim();
+    }
+
+    public String getReservedFields2() {
+        return reservedFields2;
+    }
+
+    public void setReservedFields2(String reservedFields2) {
+        this.reservedFields2 = reservedFields2 == null ? null : reservedFields2.trim();
     }
 }

@@ -1,5 +1,6 @@
 package com.cx.mapper;
 
+import com.cx.pojo.CourierSend;
 import com.cx.pojo.CourierSendExample;
 import org.apache.ibatis.annotations.Param;
 

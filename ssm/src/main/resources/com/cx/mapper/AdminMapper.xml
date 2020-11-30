@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.cx.mapper.TbAdminMapper" >
-  <resultMap id="BaseResultMap" type="com.cx.pojo.TbAdmin" >
+<mapper namespace="com.cx.mapper.AdminMapper" >
+  <resultMap id="BaseResultMap" type="com.cx.pojo.Admin" >
     <id column="admin_id" property="adminId" jdbcType="INTEGER" />
-    <result column="aphone" property="aphone" jdbcType="CHAR" />
-    <result column="apassword" property="apassword" jdbcType="VARCHAR" />
-    <result column="aname" property="aname" jdbcType="VARCHAR" />
-    <result column="idcard" property="idcard" jdbcType="CHAR" />
+    <result column="admin_phone" property="adminPhone" jdbcType="CHAR" />
+    <result column="admin_password" property="adminPassword" jdbcType="VARCHAR" />
+    <result column="admin_name" property="adminName" jdbcType="VARCHAR" />
+    <result column="id_card" property="idCard" jdbcType="CHAR" />
     <result column="rights" property="rights" jdbcType="INTEGER" />
     <result column="site_id" property="siteId" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
@@ -77,18 +77,18 @@ reservedFields1" jdbcType="VARCHAR" />
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    admin_id, aphone, apassword, aname, idcard, rights, site_id, create_time, update_time, 
-    
+    admin_id, admin_phone, admin_password, admin_name, id_card, rights, site_id, create_time, 
+    update_time, 
 
 reserved_fields1, reserved_fields2
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cx.pojo.TbAdminExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cx.pojo.AdminExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from tb_admin
+    from admin
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -99,50 +99,50 @@ reserved_fields1, reserved_fields2
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from tb_admin
+    from admin
     where admin_id = #{adminId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from tb_admin
+    delete from admin
     where admin_id = #{adminId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.cx.pojo.TbAdminExample" >
-    delete from tb_admin
+  <delete id="deleteByExample" parameterType="com.cx.pojo.AdminExample" >
+    delete from admin
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.cx.pojo.TbAdmin" >
-    insert into tb_admin (admin_id, aphone, apassword, 
-      aname, idcard, rights, 
+  <insert id="insert" parameterType="com.cx.pojo.Admin" >
+    insert into admin (admin_id, admin_phone, admin_password, 
+      admin_name, id_card, rights, 
       site_id, create_time, update_time, 
       
 
 reserved_fields1, reserved_fields2)
-    values (#{adminId,jdbcType=INTEGER}, #{aphone,jdbcType=CHAR}, #{apassword,jdbcType=VARCHAR}, 
-      #{aname,jdbcType=VARCHAR}, #{idcard,jdbcType=CHAR}, #{rights,jdbcType=INTEGER}, 
+    values (#{adminId,jdbcType=INTEGER}, #{adminPhone,jdbcType=CHAR}, #{adminPassword,jdbcType=VARCHAR}, 
+      #{adminName,jdbcType=VARCHAR}, #{idCard,jdbcType=CHAR}, #{rights,jdbcType=INTEGER}, 
       #{siteId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{
 
 reservedFields1,jdbcType=VARCHAR}, #{reservedFields2,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.cx.pojo.TbAdmin" >
-    insert into tb_admin
+  <insert id="insertSelective" parameterType="com.cx.pojo.Admin" >
+    insert into admin
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="adminId != null" >
         admin_id,
       </if>
-      <if test="aphone != null" >
-        aphone,
+      <if test="adminPhone != null" >
+        admin_phone,
       </if>
-      <if test="apassword != null" >
-        apassword,
+      <if test="adminPassword != null" >
+        admin_password,
       </if>
-      <if test="aname != null" >
-        aname,
+      <if test="adminName != null" >
+        admin_name,
       </if>
-      <if test="idcard != null" >
-        idcard,
+      <if test="idCard != null" >
+        id_card,
       </if>
       <if test="rights != null" >
         rights,
@@ -171,17 +171,17 @@ reserved_fields1,
       <if test="adminId != null" >
         #{adminId,jdbcType=INTEGER},
       </if>
-      <if test="aphone != null" >
-        #{aphone,jdbcType=CHAR},
+      <if test="adminPhone != null" >
+        #{adminPhone,jdbcType=CHAR},
       </if>
-      <if test="apassword != null" >
-        #{apassword,jdbcType=VARCHAR},
+      <if test="adminPassword != null" >
+        #{adminPassword,jdbcType=VARCHAR},
       </if>
-      <if test="aname != null" >
-        #{aname,jdbcType=VARCHAR},
+      <if test="adminName != null" >
+        #{adminName,jdbcType=VARCHAR},
       </if>
-      <if test="idcard != null" >
-        #{idcard,jdbcType=CHAR},
+      <if test="idCard != null" >
+        #{idCard,jdbcType=CHAR},
       </if>
       <if test="rights != null" >
         #{rights,jdbcType=INTEGER},
@@ -207,29 +207,29 @@ reservedFields1,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.cx.pojo.TbAdminExample" resultType="java.lang.Integer" >
-    select count(*) from tb_admin
+  <select id="countByExample" parameterType="com.cx.pojo.AdminExample" resultType="java.lang.Integer" >
+    select count(*) from admin
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update tb_admin
+    update admin
     <set >
       <if test="record.adminId != null" >
         admin_id = #{record.adminId,jdbcType=INTEGER},
       </if>
-      <if test="record.aphone != null" >
-        aphone = #{record.aphone,jdbcType=CHAR},
+      <if test="record.adminPhone != null" >
+        admin_phone = #{record.adminPhone,jdbcType=CHAR},
       </if>
-      <if test="record.apassword != null" >
-        apassword = #{record.apassword,jdbcType=VARCHAR},
+      <if test="record.adminPassword != null" >
+        admin_password = #{record.adminPassword,jdbcType=VARCHAR},
       </if>
-      <if test="record.aname != null" >
-        aname = #{record.aname,jdbcType=VARCHAR},
+      <if test="record.adminName != null" >
+        admin_name = #{record.adminName,jdbcType=VARCHAR},
       </if>
-      <if test="record.idcard != null" >
-        idcard = #{record.idcard,jdbcType=CHAR},
+      <if test="record.idCard != null" >
+        id_card = #{record.idCard,jdbcType=CHAR},
       </if>
       <if test="record.rights != null" >
         rights = #{record.rights,jdbcType=INTEGER},
@@ -261,12 +261,12 @@ reservedFields1,jdbcType=VARCHAR},
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update tb_admin
+    update admin
     set admin_id = #{record.adminId,jdbcType=INTEGER},
-      aphone = #{record.aphone,jdbcType=CHAR},
-      apassword = #{record.apassword,jdbcType=VARCHAR},
-      aname = #{record.aname,jdbcType=VARCHAR},
-      idcard = #{record.idcard,jdbcType=CHAR},
+      admin_phone = #{record.adminPhone,jdbcType=CHAR},
+      admin_password = #{record.adminPassword,jdbcType=VARCHAR},
+      admin_name = #{record.adminName,jdbcType=VARCHAR},
+      id_card = #{record.idCard,jdbcType=CHAR},
       rights = #{record.rights,jdbcType=INTEGER},
       site_id = #{record.siteId,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -281,20 +281,20 @@ reservedFields1,jdbcType=VARCHAR},
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cx.pojo.TbAdmin" >
-    update tb_admin
+  <update id="updateByPrimaryKeySelective" parameterType="com.cx.pojo.Admin" >
+    update admin
     <set >
-      <if test="aphone != null" >
-        aphone = #{aphone,jdbcType=CHAR},
+      <if test="adminPhone != null" >
+        admin_phone = #{adminPhone,jdbcType=CHAR},
       </if>
-      <if test="apassword != null" >
-        apassword = #{apassword,jdbcType=VARCHAR},
+      <if test="adminPassword != null" >
+        admin_password = #{adminPassword,jdbcType=VARCHAR},
       </if>
-      <if test="aname != null" >
-        aname = #{aname,jdbcType=VARCHAR},
+      <if test="adminName != null" >
+        admin_name = #{adminName,jdbcType=VARCHAR},
       </if>
-      <if test="idcard != null" >
-        idcard = #{idcard,jdbcType=CHAR},
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=CHAR},
       </if>
       <if test="rights != null" >
         rights = #{rights,jdbcType=INTEGER},
@@ -323,12 +323,12 @@ reservedFields1,jdbcType=VARCHAR},
     </set>
     where admin_id = #{adminId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cx.pojo.TbAdmin" >
-    update tb_admin
-    set aphone = #{aphone,jdbcType=CHAR},
-      apassword = #{apassword,jdbcType=VARCHAR},
-      aname = #{aname,jdbcType=VARCHAR},
-      idcard = #{idcard,jdbcType=CHAR},
+  <update id="updateByPrimaryKey" parameterType="com.cx.pojo.Admin" >
+    update admin
+    set admin_phone = #{adminPhone,jdbcType=CHAR},
+      admin_password = #{adminPassword,jdbcType=VARCHAR},
+      admin_name = #{adminName,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=CHAR},
       rights = #{rights,jdbcType=INTEGER},
       site_id = #{siteId,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
