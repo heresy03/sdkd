@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../css/login.css">
+    <!-- <link rel="stylesheet" href="../css/booking_delivery.css"> -->
+</head>
+<body >
+    <!-- <div class="head" style="background-color: white;">
+        <div class="container" style="background-color: white;">
+            <div class="option-first" style="background-color: white;">
+                <img src="../img/sdkd_log.png">
+            </div>
+            <div class="option" id="app" style="background-color: white;">
+                <a href="HomePage.html" >首页</a>
+            </div>
+            <div class="option" style="background-color: white;">
+                <a href="#" >预约寄件</a>
+            </div>
+            <div class="option" style="background-color: white;">
+                <a href="bulk-delivery.html">批量寄件</a>
+            </div>
+            <div class="option" style="background-color: white;">
+                <a href="">个人中心</a>
+            </div>
+           
+            <div class="option-last" style="background-color: white;">
+                <a href="">登录</a>
+            </div>
+        </div>
+    </div> -->
+<div class="container">
+     <div class="login-main">
+    <div class="login-box" >
+
+        <div class="login-header">
+            <div class="header-tip">
+           <img src="../images/login-header.svg" alt="">
+                <i>会员登录</i>
+            </div>
+            <a href="#">免费注册</a>
+
+        </div>
+
+        <div class="login-way">
+            <ul style="padding-left: 0px">
+                <li id="login-account" >账号密码登录</li>
+                <li id="login-mobile">手机短信登录</li>
+            </ul>
+        </div>
+
+        <div class="switch-account" style="display: block">
+            <div class="item">
+                <p class="tips"></p>
+                <span class="label account-label">账号:</span>
+               <input class="input-txt" type="text"  id="name"  name="phone"   placeholder="注册手机号">
+            </div>
+            <div class="item">
+                <p class="tips"></p>
+                <span class="label account-label">密码:</span>
+                <input class="input-txt" type="password"  id="pwd"  name="pwd"   placeholder="请输入密码">
+
+            </div>
+            <a href="" class="forget-pwd">忘记密码</a>
+                <button type="submit" class="btn-submit">Submit</button>
+
+        </div>
+
+
+        <div class="switch-mobile"style="display: none">
+            <div class="item">
+                <p class="tips"></p>
+                <span class="label">手机号:</span>
+                <input class="input-txt" type="text"  id="phone"  name="phone"   placeholder="注册手机号">
+            </div>
+
+            <div class="item">
+                <p class="tips"></p>
+                <span class="label">验证码:</span>
+                <input  class="input-txt code-txt" type="text"  id="code" name="code"   placeholder="验证码">
+                <img  class="get-pic-code" src="../images/index.png">
+
+            </div>
+
+            <div class="item">
+                <p class="tips"></p>
+                <span class="label">短信验证码:</span>
+               <input class="input-txt code-txt" type="text"  id="phone-code" name="phonecode"   placeholder="短信验证码">
+                <span class="get-code">获取验证码 </span>
+            </div>
+                <button type="submit" class="btn-submit">登录</button>
+
+            </div>
+
+        </div>
+</div>
+</div>
+
+
+
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/vue.min.js"></script>
+<script src="../js/login.js"></script>
+</body>
+</html>

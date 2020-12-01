@@ -14,8 +14,8 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
     <!-- 定义视图解析器，如下找到/WEB-INF目录，其中文件以jsp作为后缀的文件作为映射 -->
     <bean
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/"></property>
-        <property name="suffix" value=".jsp"></property>
+
+        <property name="suffix" value=".html"></property>
     </bean>
 
 <!--    <mvc:interceptors>-->

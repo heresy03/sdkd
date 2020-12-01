@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body style="background-color: #F5F6F7">
+<div class="container" style="background-color:white;margin-top: 20px">
+    <form style="margin:10px 0px 10px">
+        <span style="font-size:larger;color: black">添加快递</span>
+        <hr style="border: black 1px solid">
+        <div class="form-group">
+            <label for="pageId">快递ID</label>
+            <input type="text" class="form-control" name="pageId" id="pageId" placeholder="请输入快递Id">
+        </div>
+        <div class="form-group">
+            <label for="pageNum">快递编号</label>
+            <input type="text" class="form-control" name="pageNum" id="pageNum" placeholder="请输入快递编号">
+        </div>
+        <div class="form-group">
+            <label for="sendId">寄件人ID</label>
+            <input type="text" class="form-control" name="sendId" id="sendId" placeholder="请输入寄件人ID">
+        </div>
+        <div class="form-group">
+            <label for="weight">重量(KG)</label>
+            <input type="number" class="form-control" name="weight" id="weight" min="1">
+        </div>
+        <div class="form-group">
+                <label for="remark">寄件备注</label>
+                <textarea class="form-control" name="weight" id="remark" placeholder="请输入寄件备注"></textarea>
+         </div>
+        <div class="form-group">
+                <label for="rcvId">收件人ID</label>
+                <input type="text" class="form-control" name="rcvId" id="rcvId" placeholder="请输入收件人ID">
+        </div>
+        <div class="form-group">
+                <label for="pageCode">取件码</label>
+                <input type="text" class="form-control" name="pageCode" id="pageCode" placeholder="请输入取件码">
+        </div>
+        <button type="submit" class="btn btn-primary form-control ">添加</button>
+    </form>
+</div>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/distpicker.data.js"></script>
+<script src="../js/distpicker.js"></script>
+</body>
+</html>

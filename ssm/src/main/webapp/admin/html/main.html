@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>Bootstrap 实例 - 折叠面板</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body >
+<div class="main">
+    <div class="navigation" >
+        <div class="title">
+            <div class="title-top"></div>
+            <div class="title-img">
+                <img src="img/快递title.svg" alt="">
+            </div>
+            &ensp;瞬达快递
+        </div>
+        <div class="body" style="width: 100%;height:100%; float: left;">
+            <div class="panel-group" id="accordion" >
+                <div class="panel panel-default" style="border: 0px;margin-top: 15px;">
+                    <div class="panel-heading" >
+                        <h4 class="panel-title" >
+                            <a class="tips" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" style="text-decoration:none">
+                                <div class="img">
+                                    <img src="img/主页.svg" alt="">
+                                </div>
+                                <span class="tip">主界面</span>
+                            </a> 
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse">
+                        <div class="panel-body" >
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">&emsp;&emsp;&emsp;&emsp;控制台</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default" style="border: 0px;">
+                    <div class="panel-heading" >
+                        <h4 class="panel-title">
+                            <div class="img" style="width: 22px; margin-right: 7px;">
+                                <img src="img/快递管理%20(1).svg" alt="">
+                            </div>
+                            <a class="tips" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" style="text-decoration:none">
+                                <span class="tip">快件管理</span>
+                            </a>   
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="html/PageList.html" target="frame">快件列表</a></li>
+                                <li><a href="html/AddPageForm.html" target="frame">快件录入</a></li>
+                                <li><a href="html/UpdatePageForm.html" target="frame">快件修改</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default" style="border: 0px;">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">  
+                            <div class="img">
+                                <img src="img/快递员管理_o.svg" alt="">
+                            </div>
+                            <a class="tips" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" style="text-decoration:none">
+                                <span class="tip">快递员管理</span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="html/CourierList.html" target="frame">快递员列表</a></li>
+                                <li><a href="html/AddCourierForm.html" target="frame">快递员录入</a></li>
+                                <li><a href="html/UpdateCourierForm.html" target="frame">快递员修改</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default" style="border: 0px;">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <div class="img" style="width: 23px;margin-left: 3px;margin-right: 3px;">
+                                <img src="img/用户管理.svg" alt="">
+                            </div>
+                            <a class="tips" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" style="text-decoration:none">
+                                <span class="tip">用户管理</span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="html/UserList.html" target="frame">用户列表</a></li>
+                                <li><a href="html/AddUserForm.html" target="frame">用户录入</a></li>
+                                <li><a href="html/UpdateUserForm.html" target="frame">用户修改</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default" style="border: 0px;">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <div class="img">
+                                <img src="img/快递员管理_o.svg" alt="">
+                            </div>
+                            <a class="tips" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" style="text-decoration:none">
+                                <span class="tip">站点管理</span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="html/SiteList.html" target="frame">站点列表</a></li>
+                                <li><a href="html/AddSiteForm.html" target="frame">站点信息录入</a></li>
+                                <li><a href="html/UpdateSiteForm.html" target="frame">站点信息修改</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-body" >
+        <div class="top-body" >
+            <div class="hr-one">
+
+            </div>
+            <div class="top" >
+                <div class="img1">
+                    <img src="img/展开.png" alt="">
+                </div>
+                <div class="login-show">
+                    <span>admin</span>
+                    <div style="float: right; width: 20px;height: 20px;margin-right: 20px;">
+                        <img src="img/admin展开.svg" alt="">
+                    </div>
+                   
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container" style="width: 100%; height: 700px;">
+            <iframe class="iframe" name="frame" src="html/AddSiteForm.html" width="100%" height="800px"></iframe>
+        </div>
+    </div>
+  
+    
+</div>
+
+
+</body>
+</html>

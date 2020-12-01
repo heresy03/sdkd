@@ -1,0 +1,134 @@
+/* *{
+    padding:0px;
+    margin:0px;
+} */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,texarea,p,blockquote,th,td{    
+    margin:0px;
+    padding:0px;
+    
+}
+.foot{
+    width: 100%;
+    height: 250px;
+    margin-top: 30px;
+}
+
+.foot .top{
+    width: 100%;
+    height: 210px;
+    background-color: white;
+}
+
+.foot .top .top-body{
+    margin: 0 auto;
+    width: 1200px;
+    
+    height: 100%;
+    
+}
+
+.foot .top .top-body .middle{
+    float: left;
+    margin-top: 45px;
+    height: 60%;
+    width: 13.5%;
+    
+    margin-left: 1px;
+    color: #545454;
+    font-size: 14px;
+}
+
+.foot .top .top-body .middle .in{
+    height: 100%;
+    width: 30px;
+    
+    float: right;
+    margin-top: -80px;
+    border-left: 1px solid #CCCCCC;
+}
+
+.foot .top .top-body .middle .href{
+    height: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.foot .top .top-body .middle .href img{
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+
+/*img{*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+/*}*/
+
+.foot .top .top-body .qr_code{
+    float: left;
+    margin-top: 45px;
+    width: 12%;
+    height: 60%;
+    
+    margin-left: 1px;
+}
+
+.foot .top .top-body .qr_code .main{
+    width: 100px;
+    height: 100px;
+    
+}
+
+.foot .top .top-body .qr_code img{
+    width: 15px;
+    height: 15px;
+    float: left;
+}
+
+.foot .top .top-body .qr_code .text{
+    font-size: 12px;
+    color: #545454;
+    float: left;
+}
+
+.foot .top .top-body .interval{
+    float: left;
+    width: 6%;
+    margin-top: 45px;
+    height: 60%;
+    
+    margin-left: 1px;
+    border-left: 1px solid #CCCCCC;
+}
+
+.foot .top .top-body .logo{
+    float: left;
+    width: 18%;
+    margin-top: 45px;
+    height: 60%;
+    
+    margin-left: 1px;
+}
+
+
+.foot .bottom{
+    
+    height: 40px;
+    background-color: #707070;
+    text-align: center;
+
+    height:40px; 
+    overflow:hidden; 
+    text-align: center;
+    color: #B3B3B3;
+    line-height:40px; 
+    font-size: 12px;
+}
+
+.foot .bottom a{
+    text-decoration: none;
+    color: #409EFF;
+}
+.foot .logo img{
+    height:100px;
+}
