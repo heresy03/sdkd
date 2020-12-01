@@ -26,7 +26,7 @@ public class CourierController {
         System.out.println(courier1);
         return "/test";
     }
-    @RequestMapping("add")
+    @RequestMapping("addCourier")
     public String add(Model model, Courier courier){
 
         System.out.println(courier);
