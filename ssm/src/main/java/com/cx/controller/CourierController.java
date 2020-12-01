@@ -38,6 +38,6 @@ public class CourierController {
     @RequestMapping("toAdd")
     public String add1(Model model, Courier courier){
 
-        return "admin/html/main";
+        return "html/main";
     }
 }
