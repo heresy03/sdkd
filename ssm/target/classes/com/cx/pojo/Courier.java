@@ -35,6 +35,28 @@ public class Courier {
 
     private String reservedFields2;
 
+    @Override
+    public String toString() {
+        return "Courier{" +
+                "id=" + id +
+                ", courierNum=" + courierNum +
+                ", courierPhone='" + courierPhone + '\'' +
+                ", courierPassword='" + courierPassword + '\'' +
+                ", courierName='" + courierName + '\'' +
+                ", courierProvince='" + courierProvince + '\'' +
+                ", courierCity='" + courierCity + '\'' +
+                ", courierArea='" + courierArea + '\'' +
+                ", sex='" + sex + '\'' +
+                ", idCard='" + idCard + '\'' +
+                ", siteId=" + siteId +
+                ", rights=" + rights +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", reservedFields1='" + reservedFields1 + '\'' +
+                ", reservedFields2='" + reservedFields2 + '\'' +
+                '}';
+    }
+
     public Integer getId() {
         return id;
     }

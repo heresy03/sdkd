@@ -102,13 +102,17 @@
 
 
   <build>
+
     <resources>
+
       <resource>
+
         <directory>src/main/java</directory>
       </resource>
       <!--指定资源的位置-->
       <resource>
         <directory>src/main/resources</directory>
+
         <!--此配置不可缺，否则mybatis的Mapper.xml将会丢失-->
         <!--<includes>
           &lt;!&ndash;换成你所在xml文件的所在路径&ndash;&gt;

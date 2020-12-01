@@ -5,9 +5,11 @@
     <title>Title</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
-<body>
-<div class="container">
-<form>
+<body style="background-color: #F5F6F7">
+<div class="container" style="background-color:white;margin-top: 20px">
+<form action="../add.do" method="post" style="margin:10px 0px 10px">
+    <span style="font-size:larger;color: black">添加快递员</span>
+    <hr style="border: black 1px solid">
     <div class="form-group">
         <label for="courierNum">快递员ID</label>
         <input type="text" class="form-control" name="courierNum" id="courierNum" placeholder="请输入快递员ID">
@@ -33,10 +35,10 @@
     <div class="form-group">
         <label>性别 :</label>
         <label class="radio-inline">
-            <input type="radio" name="sex" value="man">男
+            <input type="radio" name="sex" value="1">男
         </label>
         <label class="radio-inline">
-            <input type="radio" name="sex" value="woman">女
+            <input type="radio" name="sex" value="0">女
         </label>
     </div>
     <div class="form-group">
@@ -47,16 +49,16 @@
         <label for="siteId">所属站点ID</label>
         <input type="text" class="form-control" name="siteId" id="siteId" placeholder="请输入所属站点ID">
     </div>
-    <div class="form-group">
-        <label>权限 :</label>
-        <select name="rights" id="rights">
-        <option>请选择权限</option>
-        <option name="rights0" value="zero">用户</option>
-        <option name="rights1" value="one">快递员</option>
-        <option name="rights2" value="two">管理员</option>
-        </select>
-    </div>
-    <button type="submit" class="btn btn-danger form-control ">添加</button>
+<!--    <div class="form-group">-->
+<!--        <label>权限 :</label>-->
+<!--        <select name="rights" id="rights">-->
+<!--        <option>请选择权限</option>-->
+<!--        <option name="rights0" value="0">用户</option>-->
+<!--        <option name="rights1" value="1">快递员</option>-->
+<!--        <option name="rights2" value="2">管理员</option>-->
+<!--        </select>-->
+<!--    </div>-->
+    <button type="submit" class="btn btn-primary form-control ">添加</button>
 </form>
 </div>
 <script src="../js/jquery-3.3.1.min.js"></script>
