@@ -1,4 +1,4 @@
-package com.cx.controller;
+package com.cx.controller.wjr;
 /**
  * 温家饶
  */
@@ -26,7 +26,7 @@ public class CourierController {
         System.out.println(courier1);
         return "/test";
     }
-    @RequestMapping("add")
+    @RequestMapping("addCourier")
     public String add(Model model, Courier courier){
 
         System.out.println(courier);
@@ -35,7 +35,7 @@ public class CourierController {
         System.out.println(courier1);
         return "redirect:../admin/html/AddCourierForm.html";
     }
-    @RequestMapping("toAdd")
+    @RequestMapping("toAddCourier")
     public String add1(Model model, Courier courier){
 
         return "html/main";
