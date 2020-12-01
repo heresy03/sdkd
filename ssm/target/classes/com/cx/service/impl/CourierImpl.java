@@ -25,4 +25,8 @@ public class CourierImpl implements CourierService {
     public Courier selectByName(Courier courier) {
         return null;
     }
+
+    public int addCourier(Courier courier) {
+        return courierMapper.insert(courier);
+    }
 }

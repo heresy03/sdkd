@@ -1,0 +1,117 @@
+.body{
+   
+    background-color: blue; /* 不支持线性的时候显示 */
+    background-image: linear-gradient(to right, #0B0434 , #663454);
+}
+.panel-heading{
+    background-color: blue; /* 不支持线性的时候显示 */
+    background-image: linear-gradient(to right, #0B0434 , #663454);
+}
+
+
+.tips{
+    color: white;
+    display: block;
+    text-decoration: none;
+    height: 40px;
+}
+.tip{
+    color:#9EA6AD;
+    font-size: 22px;
+}
+.tip:hover{
+    color: white;
+    text-decoration: none;
+}
+.container{
+    float: left;
+    height: 950px;
+    width: 82%;
+}
+
+.iframe{
+    border: 0px;
+}
+
+.main{
+    height: 850px;
+    width:100%;
+}
+
+.img{
+    width: 30px;
+    height: 30px;
+    
+    float: left;
+    margin-top: -5px;
+    
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.main-body{
+    width:85%;
+    height: 300px;
+    float: right;
+}
+
+.main-body .top-body{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+}
+
+.main-body .top-body .top{
+    width: 100%;
+    height: 40px;
+}
+
+.img1{
+    width: 25px;
+    height: 25px;
+    margin-left: 20PX;
+    float: left;
+    
+}
+
+.main-body .top-body .hr-one{
+    width: 100%;
+    height: 20px;
+}
+
+.login-show{
+    float: right;
+    margin-right: 10px;
+    width: 80px;
+    height: 25px;
+   
+}
+
+.navigation{
+    width:15%;
+    height:100%;
+    float: left;
+}
+
+.title{
+    color: white;
+    font-size: 26px;
+    margin: 0 auto;
+    background-color: #0D0534;
+    width: 100%;
+    height: 50px;
+}
+
+.title .title-img{
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+}
+
+.title .title-top{
+    width: 100%;
+    height: 5px;
+}

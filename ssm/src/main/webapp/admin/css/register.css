@@ -1,0 +1,144 @@
+body{
+    margin: 0;
+    padding: 0;
+    color: #282828;
+    background: #eef1f4;
+    min-width: 1200px;
+    font-size: 14px;
+    box-sizing: inherit;
+}
+.header{
+    width: 1263px;
+    height: 77px;
+    background-color:skyblue ;
+}
+.container{
+    background: #eef1f4;
+    box-sizing: inherit;
+}
+.register-box{
+    width: 660px;
+    height: 650px;
+    border-radius: 10px;
+    background: #fff!important;
+    margin:100px auto;
+    border: 1px solid #fff;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(51,162,247,.2);
+}
+.find-title{
+    width: 550px;
+    height: 60px;
+    margin: 35px auto;
+}
+.find-title p{
+    text-align: center;
+    line-height: 58px;
+    font-size: 20px;
+    color: #33a2f7;
+    font-family: 'PingFang SC';
+}
+.find-title .go_login{
+    width: 92px;
+    height: 49px;
+    display: block;
+    position: absolute;
+    top: 42px;
+    right: -13px;
+    line-height: 54px;
+    text-indent: 33px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-decoration: none;
+    background: url("../../images/go-login.png") center center no-repeat;
+}
+.register-form{
+    width: 400px;
+    margin: 45px auto;
+}
+.register-form .item{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 27px;
+    position: relative;
+}
+.register-form .item .tips{
+    position: absolute;
+    width: 100%;
+    height: 16px;
+    background: url("../../images/tips.png") 5px center no-repeat;
+    text-indent: 30px;
+    font-size: 12px;
+    color: #f84224;
+    opacity: 0;
+    top: -25px;
+    transition: all .3s;
+}
+.register-form .item .img-icon{
+    display: inline-block;
+    width: 37px;
+    height: 22px;
+    border-right: 1px solid #dadada !important;
+
+    position: absolute;
+    top: 13px;
+    text-align: center;
+}
+img{
+    height: auto;
+    max-width: 100%;
+}
+.register-form .item .input-txt{
+    /*position: absolute;*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    text-indent: 50px;
+    outline: 0;
+    transition: all .5s;
+    font-family: SimSun;
+}
+.register-form .item .code-txt{
+    width: 243px!important;
+}
+.register-form .item .get-pic-code{
+    width: 130px;
+    height: 50px;
+    line-height: 50px;
+    float: right;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.register-form .item .get-code{
+    color: #fff;
+    background: #ff9c00;
+    text-align: center;
+    width: 130px;
+    height: 50px;
+    line-height: 50px;
+    float: right;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.register-form .register-btn{
+    width: 200px;
+    height: 48px;
+    margin: 30px auto;
+    line-height: 48px;
+    text-align: center;
+    background: #33a2f7;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 24px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(51,162,247,.4);
+}
+.footer{
+    width: 1263px;
+    height: 503px;
+    background-color: khaki;
+}
+

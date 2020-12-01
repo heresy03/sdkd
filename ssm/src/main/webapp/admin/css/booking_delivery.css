@@ -1,0 +1,705 @@
+/* *{
+    padding:0px;
+    margin:0px;
+} */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,texarea,p,blockquote,th,td{    
+    margin:0px;
+    padding:0px;
+    
+}
+
+body{
+    background-color: #EEF1F4;
+}
+
+.head{
+    float: top;
+    width: 100%;
+    height: 75px;
+    background-color: white;
+}
+
+.head .container{
+    width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    overflow:hidden; 
+    text-align: center;
+    color: black;
+    line-height:70px; 
+    font-size: 14px;
+    
+}
+
+.head .container a{
+    text-decoration: none;
+    color: black;
+}
+
+.head .container .option-first{
+    width: 230px;
+    height: 100%;
+    float: left;
+    
+}
+
+.head .container .option{
+    width: 140px;
+    height: 100%;
+    float: left;
+   
+}
+
+.head .container .option-last{
+    width: 40px;
+    height: 100%;
+    float: right;
+   
+}
+
+
+.middle-body{
+    margin: 0 auto;
+    width: 1200px;
+    height: 1000px;
+   
+}
+
+.middle-body .middle-head{
+    height: 70px;
+    width: 100%;
+   
+
+}
+
+.middle-body .middle-sender{
+    height: 360px;
+    width: 100%;
+}
+
+.middle-body .middle-head .middle-left{
+    float: left;
+    height: 80%;
+    width: 600px;
+    margin-top: 8px;
+    
+}
+.middle-body .middle-head .middle-left .text{
+    float: left;
+    height:60px; 
+    overflow:hidden; 
+    color: #999999;
+    font-size: 14px;
+    line-height:60px; 
+      
+}
+
+.middle-body .middle-head .middle-left .img{
+    margin-top: 10PX;
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+
+.middle-body .middle-head .middle-left .title{
+    float: left;
+    height:60px; 
+    overflow:hidden; 
+    color: black;
+    font-size: 22px;
+    line-height:60px; 
+      
+}
+
+.middle-body .middle-head .middle-right{
+    margin-top: 8px;
+    float: right;
+    height: 80%;
+    width: 500px;
+    
+}
+.middle-body .middle-head .middle-right .text{
+    height:60px; 
+    line-height:60px; 
+    float: right;
+    overflow:hidden; 
+    color: #999999;
+    font-size: 14px;
+}
+
+.middle-body .middle-head .middle-right .button{
+    float: right;
+    margin-top: 15px;
+    width: 80px;
+    height: 30px;
+    background-color: #409EFF;
+    border-radius: 5px;
+
+}
+
+.middle-body .middle-head .middle-right .button:hover{
+    float: right;
+    margin-top: 15px;
+    width: 80px;
+    cursor:pointer;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #40BEFF;
+
+}
+
+.middle-body .middle-head .middle-right .button .href{
+    text-align: center;
+    margin-top: 6px;
+    font-size: 12px;
+    color: white;
+}
+
+.middle-body  .level{
+    width: 100%;
+    height: 5px;
+    margin-top: -13px;
+    
+}
+
+.middle-body .middle-sender .sender-form{
+    float: left;
+    width: 695px;
+    height: 100%;
+    background-color: white;  
+}
+
+.middle-body .middle-sender .sender-form .label{
+    position: absolute;
+    background-color: #FF7010;
+    
+    
+    margin-left: 20px;
+}
+
+.middle-body .middle-sender .sender-form .label .square{
+    width: 20px;
+    height: 40px;
+    margin-left: 6px;
+    overflow:hidden; 
+    color: #fff;
+    font-size: 18px;
+    line-height:40px; 
+}
+
+.middle-body .middle-sender .sender-form .label .triangle{
+    width: 0;
+    height: 0;
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+}
+
+.send-main{
+    margin-top: 40px;
+    margin-left: 30px;
+    width: 80%;
+    height: 80%;
+   
+}
+
+.send-main .button{
+    float: right;
+    border-radius: 3px;
+    margin-top: -30px;
+    margin-right: 20px;
+    width: 80px;
+    height: 30px;
+    
+    background-color: #409EFF;
+}
+
+.send-main .button:hover{
+    float: right;
+    border-radius: 3px;
+    margin-top: -30px;
+   
+    width: 80px;
+    cursor:pointer;
+    height: 30px;
+    background-color: #40bFFF;
+}
+
+.send-main .button .href{
+    text-align: center;
+    margin-top: 6px;
+    font-size: 12px;
+    color: white;
+}
+
+.send-main span{
+    color: #606266;
+    font-size: 15px;
+    
+}
+
+.send-main .input{ 
+    border: 1px solid #DCDFE6;
+    width: 330px;
+    height: 27px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.send-main .input:focus{ 
+    border: 1px solid #DCDFE6;
+    outline-color:#4daff1;
+    width: 330px;
+    height: 27px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.send-main .input-text{
+    height: 30px;
+    
+}
+
+.send-main .interval{
+    height: 20px;
+    
+}
+
+.address-main .input-text{
+    height: 30px;
+    
+}
+
+.address-main .interval{
+    height: 20px;
+    
+}
+
+.send-main .checkbox{
+    margin: 0 auto;
+    width: 65%;
+    height: 30PX;
+    
+}
+
+.send-main .checkbox label{
+    color: #999999;
+    font-size: 15px;
+}
+
+.send-main .checkbox a{
+    float: right;
+    margin-right: 35px;
+    color: #409EFF;
+    font-size: 14px;
+    
+}
+
+.middle-body .middle-sender .sender-login{
+    float: right;
+    width: 497px;
+    height: 100%;
+    background-color: white;
+    
+}
+
+.middle-body .middle-sender .sender-login .member{
+    width: 350px;
+    margin: 0 auto;
+    height: 200px;
+   
+    margin-top: 80px;    
+
+}
+
+.middle-body .middle-addressee{
+    height: 300px;
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.middle-body .middle-addressee .addressee-left{
+    float: left;
+    height: 100%;
+    width: 550px;
+
+}
+
+.member ul li{
+    list-style: none;
+    line-height:45px;
+    color: #A4A1B1;
+}
+
+.member ul li a{
+    color: #409EFF;
+    
+}
+
+.member button{
+    background-color: #909399;
+    color: #ffffff;
+    border: 0px;
+    width: 90px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.member ul .title{
+    font-size: 14px;
+    color: black;
+}
+
+.member ul .img{
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-top: 10px;
+}
+
+.member ul img{
+    width: 100%;
+    height: 100%;
+}
+
+.middle-body .middle-addressee .addressee-middle{
+    float: right;
+    height: 170px; 
+    width: 20px;  
+    margin-top: 30px;
+    border-left: 1px solid #CCCCCC;
+}
+
+.middle-body .middle-addressee .addressee-right{
+    float: right;
+    height: 85%;
+    width: 600px;
+    margin-top: 45px;
+    
+}
+
+.address-main{
+    
+    margin-left: 30px;
+    width: 80%;
+    height: 80%;
+    margin-top: 30px;
+    
+}
+
+.address-main .button{
+    float: right;
+    margin-right: -13px;
+    margin-top: -30px;
+    width: 80px;
+    height: 30px;
+    background-color: #409EFF;
+    border-radius: 3px;
+}
+
+.address-main .button:hover{
+    float: right;
+  
+    margin-top: -30px;
+    width: 80px;
+    cursor:pointer;
+    height: 30px;
+    background-color: #40bFFF;
+}
+
+.address-main .button .href{
+    text-align: center;
+    margin-top: 6px;
+    font-size: 12px;
+    color: white;
+}
+
+.address-main span{
+    color: #606266;
+    font-size: 15px;
+    
+    
+}
+
+.address-main .input-text{
+    height: 30px;
+}
+
+.address-main .input{ 
+    border: 1px solid #DCDFE6;
+    width: 250px;
+    height: 27px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.address-main .input:focus{ 
+    
+    outline-color:#4daff1;
+    border: 1px solid #DCDFE6;
+    width: 250px;
+    height: 27px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.address-main .checkbox{
+    margin: 0 auto;
+    width: 60%;
+    height: 30PX;
+}
+
+.address-main .checkbox label{
+    color: #999999;
+    font-size: 15px;
+}
+
+.address-main .checkbox a{
+    float: right;
+    margin-right: 10px;
+    color: #409EFF;
+    font-size: 14px;
+    
+}
+
+.addressee-right .information{
+    margin-top: 5px;
+    height: 45px;
+    width: 100%;
+    font-size:15px
+}
+
+.addressee-right .information .select{
+    border: 1px solid #DCDFE6;
+    width: 100px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+.information .prompt{
+    border: #999999 1px  dashed;
+    margin-left: 10px;
+    color: #999999;
+}
+
+.information .textarea{
+   
+    margin-left: 100px;
+    width: 450px;
+    border: 1px solid #DCDFE6;
+}
+
+
+
+.middle-body .middle-add-addressee{
+    height: 85px;
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+    display:block;
+    text-decoration: none;
+    color: #969595;
+}
+
+.middle-body .middle-add-addressee .p{
+    height: 80px;
+    width: 100px;
+    overflow:hidden; 
+    color: #707070;
+    margin: 0 auto;
+    text-align: center;
+    line-height:80px; 
+    font-size: 14px;                                                                                                                                                                                                                        
+}
+
+.middle-body .middle-regulations{
+    height: 150px;
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.middle-body .middle-regulations .button{
+    width: 180px;
+    height: 60px;
+    margin-left: 500px;
+    color: white;
+    background-color:#409EFF ;
+    border: 0px ;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.middle-body .middle-regulations .left{
+    float: left;
+}
+
+.middle-body .middle-regulations .right{
+    float: right;
+}
+
+.middle-body .middle-regulations .agreement{
+    height:60px; 
+    overflow:hidden; 
+    color: #707070;
+    margin: 0 auto;
+    text-align: center;
+    width: 300px;
+    line-height:60px; 
+    font-size: 14px;
+    
+}
+
+.middle-addressee .label{
+    position: absolute;
+    background-color: #0B9DDB;
+    margin-left: 20px;
+}
+
+.middle-addressee .label .square{
+    width: 20px;
+    height: 40px;
+    margin-left: 6px;
+    overflow:hidden; 
+    color: #fff;
+    font-size: 18px;
+    line-height:40px; 
+}
+
+.middle-addressee .label .triangle{
+    width: 0;
+    height: 0;
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+}
+
+.middle-body .middle-regulations .agreement a{
+    text-decoration: none;
+    color: #409EFF;
+}
+
+.foot{
+    width: 100%;
+    height: 250px;
+   
+    margin-top: 30px;
+}
+
+.foot .top{
+    width: 100%;
+    height: 210px;
+    background-color: white;
+}
+
+.foot .top .top-body{
+    margin: 0 auto;
+    width: 1200px;
+    
+    height: 100%;
+    
+}
+
+.foot .top .top-body .middle{
+    float: left;
+    margin-top: 45px;
+    height: 60%;
+    width: 13.5%;
+    
+    margin-left: 1px;
+    color: #545454;
+    font-size: 14px;
+}
+
+.foot .top .top-body .middle .in{
+    height: 100%;
+    width: 30px;
+    
+    float: right;
+    margin-top: -80px;
+    border-left: 1px solid #CCCCCC;
+}
+
+.foot .top .top-body .middle .href{
+    height: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.foot .top .top-body .middle .href img{
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.foot .top .top-body .qr_code{
+    float: left;
+    margin-top: 45px;
+    width: 12%;
+    height: 60%;
+    
+    margin-left: 1px;
+}
+
+.foot .top .top-body .qr_code .main{
+    width: 100px;
+    height: 100px;
+    
+}
+
+.foot .top .top-body .qr_code img{
+    width: 15px;
+    height: 15px;
+    float: left;
+}
+
+.foot .top .top-body .qr_code .text{
+    font-size: 12px;
+    color: #545454;
+    float: left;
+}
+
+.foot .top .top-body .interval{
+    float: left;
+    width: 6%;
+    margin-top: 45px;
+    height: 60%;
+    
+    margin-left: 1px;
+    border-left: 1px solid #CCCCCC;
+}
+
+.foot .top .top-body .logo{
+    float: left;
+    width: 18%;
+    margin-top: 45px;
+    height: 60%;
+    
+    margin-left: 1px;
+}
+
+
+.foot .bottom{
+    
+    height: 40px;
+    background-color: #707070;
+    text-align: center;
+
+    height:40px; 
+    overflow:hidden; 
+    text-align: center;
+    color: #B3B3B3;
+    line-height:40px; 
+    font-size: 12px;
+}
+
+.foot .bottom a{
+    text-decoration: none;
+    color: #409EFF;
+}

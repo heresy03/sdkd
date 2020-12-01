@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心</title>
+    <link rel="stylesheet"  href="../css/bulk-delivery.css">
+</head>
+<body>
+    <div class="head">
+        <div class="container">
+            <div class="option-first">
+                <img src="../img/sdkd_log.png">
+            </div>
+            <div class="option">
+                <a href="HomePage.html">首页</a>
+            </div>
+            <div class="option">
+                <a href="booking_delivery.html">预约寄件</a>
+            </div>
+            <div class="option">
+                <a href="#" style="color: #6EC4FB;">批量寄件</a>
+            </div>
+            <div class="option" style="background-color: white;">
+                <a href="service-head.html">查询服务</a>
+            </div>
+            <div class="option">
+                <a href="">个人中心</a>
+            </div>
+            <div class="option-last">
+                <a href="login-head.html">登录</a>
+            </div>
+        </div>
+    </div>
+    <div class="middle-body">
+        <div class="middle-head">
+            <div class="middle-left">
+                <div class="img">
+                    <img style="width: 100%;height: 100%;" src="../img/send.svg">
+                </div>
+                <p class="title">
+                    &nbsp;预约寄件
+                </p>
+                <p class="text">
+                    （17点前下单，业务员当天收件，17点后下单次日收件）
+                </p>
+            </div>
+            <div class="middle-right">
+                <p class="text">
+                    &thinsp; 
+                </p>
+                <div class="button">
+                    <p class="href">预约寄件</p>
+                </div>
+                <p class="text">单独寄件，可以使用&thinsp;  </p>
+            </div>
+            
+        </div>
+        <div class="level">
+            <hr style="height: 1px;background-color: #CCCCCC;border: none;">   
+        </div>
+        <form action="post">
+        <div class="middle-sender">
+            <div class="sender-form">
+                <div class="label">
+                    <div class="square">寄</div>
+                    <div class="triangle"></div>
+                </div>
+                <div class="send-main">
+                    <div class="input-text">
+                        <span>&emsp;&emsp;<span style="color: red;">*<span>姓名：&emsp;</span><input type="text" class="input"> 
+                        <div class="button">
+                            <p class="href">地址薄</p>
+                        </div>
+                    </div>
+                    <div class="interval">
+
+                    </div>
+                    <div class="input-text">
+                        <span>&emsp;&emsp;<span style="color: red;">*<span>电话：&emsp;</span><input type="text" class="input">
+                    </div>
+                    <div class="interval">
+
+                    </div>
+                    <div class="input-text">
+                        <span><span style="color: red;">*<span>所属区域：&emsp;</span><input type="text" class="input">
+                    </div>
+                    <div class="interval">
+
+                    </div>
+                    <div class="input-text">
+                    <span><span style="color: red;">*<span>详细地址：&emsp;</span><input type="text" class="input">
+                    
+                    </div>
+                    <div class="interval">
+
+                    </div>
+                    <div class="checkbox">
+                        <input name='subject' type="checkbox" value="Chinese" /><label> 保存到常用地址薄</label>
+                        <a href="#">智能解析地址</a>
+                    </div>     
+                </div>
+                
+            </div>
+            <div class="sender-login">
+                <div class="member">
+                    <ul>
+                        <li class="title">会员登录下单好处多</li>
+                        <li>
+                            <div class="img">
+                                <img src="../img/location.svg">
+                            </div>
+                            &thinsp; 登陆后可使用地址簿，寄件更便捷！
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img src="../img/note.svg">
+                            </div>
+                            &thinsp; 快件路由订阅、快件信息管理、批量下单
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img src="../img/cup.svg">
+                            </div>
+                            &thinsp; 更多特权逐渐开放中
+                        </li>
+                        <li>
+                            <button>立即登录</button>&nbsp;或&nbsp;<a href="#">注册成为瞬达会员</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="middle-addressee">
+            <div class="label">
+                <div class="square">收</div>
+                <div class="triangle"></div>
+            </div>
+            <div class="option"></div>
+            <div class="option">
+                <input type="submit"  value="选择文件">
+                <a href="#" class="upload">
+                    <div class="question">
+                        <img src="../img/help.svg" alt="">
+                    </div>    
+                    &nbsp;&nbsp;上传帮助
+                </a>
+               <a href="#" style="margin-right: 7px;">下载模板</a>
+            </div>
+            <div class="option"></div>
+            <div class="title">已成功上传的收件人列表：</div>
+            <div class="table">
+                <table style="width: 1100px;color: #909399;font-size:14px">
+                    <tr>
+                        <th>操作编号收件人姓名</th>
+                        <th>收件人手机</th>
+                        <th>收件人固话</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;省</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;市</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区(县)</th>
+                        <th>详细地址</th>
+                        <th>物品名称(限16字)</th>
+                        <th>重量(默认1KG)</th>
+                    <tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="information"></div>
+            
+        </div>
+        
+        <div class="middle-regulations">
+            <div class="agreement">
+                <div class="left">
+                    <input type="checkbox">&nbsp;同意并接受
+                </div>
+                <div class="right">
+                    <a href="#">"快递服务协议"</a> <a href="#">"隐私政策"</a>
+                </div>
+            </div>
+            <button class="button">
+                立即下单
+            </button>
+        </div>
+        </form>     
+    </div>
+    
+    <div class="foot">
+        <div class="top">
+            <div class="top-body">
+                <div class="middle">
+                    <div class="href" style="margin-top: 30px;">
+                        <div class="img">
+                            <img src="../img/outlets.svg">
+                        </div>
+                        &emsp;网点查询
+                    </div>
+                    <div class="href">
+                        <div class="img">
+                            <img src="../img/service.svg">
+                        </div>
+                        &emsp;产品服务
+                    </div>
+                </div>
+                <div class="middle">
+                    <div class="href" style="margin-top: 30px;">
+                        <div class="img">
+                            <img src="../img/prescription.svg">
+                        </div>
+                        &emsp;运费时效
+                    </div>
+                    <div class="href">
+                        <div class="img">
+                            <img src="../img/prohibit.svg">
+                        </div>
+                        &emsp;禁寄物品
+                    </div>
+                    <div class="in">
+
+                    </div>
+                </div>
+                <div class="qr_code">
+                    <div class="main">
+                        <img src="../img/1.png" style="width: 100%;height: 100%;">
+                    </div>
+                    <div class="img">
+                        <img src="../img/weixin.svg">
+                    </div>
+                    <div class="text">
+                        &emsp;微信公众号
+                    </div>
+                </div>
+                <div class="qr_code">
+                    <div class="main">
+                        <img src="../img/1.png" style="width: 100%;height: 100%;">
+                    </div>
+                    <div class="img">
+                        <img src="../img/qq.svg">
+                    </div>
+                    <div class="text">
+                        &emsp;QQ公众号
+                    </div>
+                </div>
+                <div class="qr_code">
+                    <div class="main">
+                        <img src="../img/1.png" style="width: 100%;height: 100%;">
+                    </div>
+                    <div class="img">
+                        <img src="../img/alipay.svg">
+                    </div>
+                    <div class="text">
+                        &emsp;支付宝服务窗
+                    </div>
+                </div>
+                <div class="qr_code">
+                    <div class="main">
+                        <img src="../img/1.png" style="width: 100%;height: 100%;">
+                    </div>
+                    <div class="img">
+                        <img src="../img/app.svg">
+                    </div>
+                    <div class="text">
+                        &emsp;瞬达APP
+                    </div>
+                </div>
+                <div class="interval">
+
+                </div>
+                <div class="logo">
+                    <img src="../img/2.png">
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            瞬达快递 版权所有 <a href="#">沪ICP备13044869号</a>
+        </div>
+
+    </div>
+</body>
+</html>
