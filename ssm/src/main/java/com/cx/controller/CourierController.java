@@ -33,7 +33,7 @@ public class CourierController {
         System.out.println("长度:"+courier.getCourierProvince().length());
         int courier1 =  courierService.addCourier(courier);
         System.out.println(courier1);
-        return "redirect:../admin/html/AddCourierForm.html1";
+        return "redirect:../admin/html/AddCourierForm.html";
     }
     @RequestMapping("toAdd")
     public String add1(Model model, Courier courier){
